@@ -1,0 +1,1328 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Yash Limbasiya | Python &amp; Odoo Developer</title>
+  <meta content="Portfolio of Yash Limbasiya - Junior Python &amp; Odoo Developer specializing in Odoo 18/19 custom ERP modules, ORM, PostgreSQL, and business workflows in Gujarat, India." name="description" />
+  
+  <!-- Favicon -->
+  <link href="data:image/svg+xml,&lt;svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22&gt;&lt;rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%23171B2D%22/&gt;&lt;text y=%2268%22 x=%2250%22 text-anchor=%22middle%22 font-family=%22sans-serif%22 font-size=%2252%22 font-weight=%22800%22 fill=%22%23D6BE91%22&gt;YL&lt;/text&gt;&lt;/svg&gt;" rel="icon" />
+  
+  <!-- Google Fonts: Plus Jakarta Sans & Fira Code -->
+  <link href="https://fonts.googleapis.com" rel="preconnect" />
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet" />
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            mono: ['"Fira Code"', 'monospace'],
+          },
+          colors: {
+            midnight: {
+              DEFAULT: '#171B2D',
+              surface: '#1E2337',
+              card: '#1C2136',
+              light: '#252B42',
+            },
+            champagne: {
+              DEFAULT: '#D6BE91',
+              hover: '#C7AE7F',
+              accent: '#E6D5B4',
+              muted: '#B9A174',
+              badge: '#2B251B',
+            },
+            ivory: {
+              DEFAULT: '#F7F4ED',
+              card: '#FFFFFF',
+              border: '#E8E2D5',
+              muted: '#EFECE3',
+            },
+            darktext: {
+              DEFAULT: '#24283A',
+              muted: '#52586D',
+              subtle: '#71788E',
+            },
+            mutedtext: {
+              DEFAULT: '#AEB5C4',
+              dark: '#8C94A7',
+            },
+            borderdark: {
+              DEFAULT: '#34394B',
+              hover: '#4A526B',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  
+  <style>
+    :root {
+      --color-midnight: #171B2D;
+      --color-champagne: #D6BE91;
+      --color-dark-text: #24283A;
+      --color-muted-text: #AEB5C4;
+      --color-border: #34394B;
+    }
+    
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #171B2D;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #34394B;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #D6BE91;
+    }
+
+    /* Subtle interactive card elevation */
+    .premium-card {
+      transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+    .premium-card:hover {
+      transform: translateY(-3px);
+      border-color: #D6BE91;
+      box-shadow: 0 12px 30px -10px rgba(214, 190, 145, 0.15);
+    }
+
+    /* Project Spotlight Card Highlight */
+    .project-card-highlight {
+      position: relative;
+      background: linear-gradient(180deg, #1E2337 0%, #171B2D 100%);
+      border: 1px solid rgba(214, 190, 145, 0.35);
+      box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.6), 0 0 25px -5px rgba(214, 190, 145, 0.1);
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+    .project-card-highlight:hover {
+      transform: translateY(-6px);
+      border-color: #D6BE91;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8), 0 0 35px 2px rgba(214, 190, 145, 0.2);
+    }
+  </style>
+</head>
+
+<body class="bg-midnight text-white font-sans antialiased selection:bg-champagne selection:text-darktext overflow-x-hidden">
+
+  <!-- Top Announcement Bar -->
+  <div class="bg-midnight-surface text-mutedtext text-xs py-2.5 px-4 text-center border-b border-borderdark flex items-center justify-center gap-2">
+    <span class="inline-block w-2 h-2 rounded-full bg-champagne animate-pulse"></span>
+    <span class="font-medium text-white">Actively Seeking Opportunities:</span>
+    <span class="hidden sm:inline text-mutedtext">Junior Python &amp; Odoo Developer Roles / Internships in Gujarat, India &amp; Remote</span>
+    <a class="text-champagne hover:text-champagne-accent font-semibold ml-1 inline-flex items-center gap-1 transition-colors" href="#contact">
+      Get in touch <span aria-hidden="true">&rarr;</span>
+    </a>
+  </div>
+
+  <!-- Header / Navigation Bar -->
+  <header class="sticky top-0 z-50 bg-midnight/95 backdrop-blur-md border-b border-borderdark transition-colors duration-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      
+      <!-- Brand Logo -->
+      <a class="flex items-center gap-3 group" href="#">
+        <div class="w-10 h-10 rounded-lg bg-champagne text-darktext flex items-center justify-center font-black text-base shadow-sm group-hover:bg-champagne-hover transition-colors">
+          YL
+        </div>
+        <div class="flex flex-col">
+          <span class="font-bold text-white leading-tight group-hover:text-champagne transition-colors">Yash Limbasiya</span>
+          <span class="text-[10px] font-mono tracking-wider text-champagne">PYTHON • ODOO 18/19</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Items -->
+      <nav class="hidden md:flex items-center gap-1 text-sm font-medium text-white">
+        <a class="px-3.5 py-2 rounded-md hover:text-champagne transition-colors" href="#about">About</a>
+        <a class="px-3.5 py-2 rounded-md hover:text-champagne transition-colors" href="#skills">Skills</a>
+        <a class="px-3.5 py-2 rounded-md hover:text-champagne transition-colors" href="#projects">Projects</a>
+        <a class="px-3.5 py-2 rounded-md hover:text-champagne transition-colors" href="#odoo-expertise">Odoo Architecture</a>
+        <a class="px-3.5 py-2 rounded-md hover:text-champagne transition-colors" href="#resume">Resume</a>
+        <a class="px-3.5 py-2 rounded-md hover:text-champagne transition-colors" href="#contact">Contact</a>
+      </nav>
+
+      <!-- Primary CTA: Hire Me -->
+      <div class="flex items-center gap-3">
+        <a class="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-champagne hover:bg-champagne-hover text-darktext text-sm font-semibold transition-all shadow-sm" href="#contact">
+          <i class="w-4 h-4 text-darktext" data-lucide="briefcase"></i>
+          <span>Hire Me</span>
+        </a>
+        
+        <!-- Mobile Menu Toggle Button -->
+        <button aria-label="Open Navigation Menu" class="md:hidden p-2 rounded-lg text-white hover:text-champagne hover:bg-midnight-surface border border-borderdark" id="mobileMenuBtn">
+          <i class="w-5 h-5" data-lucide="menu"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Navigation -->
+    <div class="hidden md:hidden border-t border-borderdark bg-midnight px-4 pt-3 pb-5 space-y-1" id="mobileMenu">
+      <a class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-white hover:text-champagne hover:bg-midnight-surface transition-colors" href="#about">About</a>
+      <a class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-white hover:text-champagne hover:bg-midnight-surface transition-colors" href="#skills">Skills</a>
+      <a class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-white hover:text-champagne hover:bg-midnight-surface transition-colors" href="#projects">Projects</a>
+      <a class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-white hover:text-champagne hover:bg-midnight-surface transition-colors" href="#odoo-expertise">Odoo Architecture</a>
+      <a class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-white hover:text-champagne hover:bg-midnight-surface transition-colors" href="#resume">Resume</a>
+      <a class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-white hover:text-champagne hover:bg-midnight-surface transition-colors" href="#contact">Contact</a>
+      <div class="pt-2">
+        <a class="mobile-link w-full inline-flex justify-center items-center gap-2 px-4 py-2.5 rounded-lg bg-champagne text-darktext font-semibold text-sm" href="#contact">
+          <i class="w-4 h-4 text-darktext" data-lucide="briefcase"></i> Hire Me
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative pt-12 pb-20 md:pt-20 md:pb-28 bg-midnight overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center">
+        
+        <!-- Left: Intro Copy -->
+        <div class="lg:col-span-6 space-y-6 text-left">
+          
+          <!-- Status Pill -->
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-midnight-surface border border-borderdark text-xs font-semibold text-mutedtext">
+            <span class="w-2 h-2 rounded-full bg-champagne"></span>
+            <span class="text-white">Junior Python • Odoo 18 / 19 Developer</span>
+          </div>
+
+          <!-- Main Headline -->
+          <h1 class="text-4xl sm:text-5xl lg:text-[3.5rem] font-extrabold tracking-tight text-white leading-[1.12]">
+            Building Business Solutions with <br class="hidden sm:inline"/>
+            <span class="text-champagne">Python &amp; Odoo</span>
+          </h1>
+
+          <!-- Muted light-gray supporting text -->
+          <p class="text-base sm:text-lg text-mutedtext max-w-2xl leading-relaxed">
+            I am a Python and Odoo developer focused on building practical business applications, custom ERP modules, workflow automation, and data-driven solutions.
+          </p>
+
+          <!-- Key Quick Badges -->
+          <div class="flex flex-wrap gap-2.5 pt-1 text-xs font-medium">
+            <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-midnight-surface border border-borderdark text-white">
+              <i class="w-3.5 h-3.5 text-champagne" data-lucide="map-pin"></i> Gujarat, India
+            </span>
+            <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-midnight-surface border border-borderdark text-white">
+              <i class="w-3.5 h-3.5 text-champagne" data-lucide="layers"></i> Odoo 18 &amp; 19 Focus
+            </span>
+            <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-midnight-surface border border-borderdark text-white">
+              <i class="w-3.5 h-3.5 text-champagne" data-lucide="user-check"></i> Fresher / Junior Level (Open to Hire)
+            </span>
+          </div>
+
+          <!-- Action Buttons -->
+          <div class="flex flex-wrap items-center gap-4 pt-2">
+            <!-- Champagne-filled primary button with dark text -->
+            <a class="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-champagne hover:bg-champagne-hover text-darktext font-semibold text-sm transition-all shadow-md" href="#projects">
+              <i class="w-4 h-4 text-darktext" data-lucide="folder-git-2"></i>
+              <span>View My Projects</span>
+            </a>
+            
+            <!-- Transparent secondary button with a champagne border -->
+            <a class="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-transparent hover:bg-champagne/10 text-champagne font-semibold text-sm border border-champagne transition-all" href="https://drive.google.com/file/d/1Jv9c6JVnv1MXm03w-JmJJLgfOpknFCf5/view?usp=drive_link" rel="noopener noreferrer" target="_blank">
+              <i class="w-4 h-4 text-champagne" data-lucide="download"></i>
+              <span>Download Resume</span>
+            </a>
+            
+            <!-- Contact Link -->
+            <a class="inline-flex items-center gap-1.5 px-3 py-3 text-mutedtext hover:text-champagne font-medium text-sm transition-colors" href="#contact">
+              <span>Contact Me</span>
+              <i class="w-4 h-4" data-lucide="arrow-right"></i>
+            </a>
+          </div>
+
+          <!-- Mini Tech Stack Visual -->
+          <div class="pt-6 border-t border-borderdark">
+            <span class="text-xs uppercase tracking-wider font-semibold text-mutedtext block mb-3">Core Technical Stack</span>
+            <div class="flex flex-wrap items-center gap-2.5">
+              <div class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-midnight-surface border border-borderdark text-xs font-mono text-white">
+                <span class="w-1.5 h-1.5 rounded-full bg-champagne"></span> Python 3.x
+              </div>
+              <div class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-midnight-surface border border-borderdark text-xs font-mono text-white">
+                <span class="w-1.5 h-1.5 rounded-full bg-champagne"></span> Odoo 18 / 19
+              </div>
+              <div class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-midnight-surface border border-borderdark text-xs font-mono text-white">
+                <span class="w-1.5 h-1.5 rounded-full bg-champagne"></span> PostgreSQL
+              </div>
+              <div class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-midnight-surface border border-borderdark text-xs font-mono text-white">
+                <span class="w-1.5 h-1.5 rounded-full bg-champagne"></span> XML &amp; QWeb
+              </div>
+              <div class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-midnight-surface border border-borderdark text-xs font-mono text-white">
+                <span class="w-1.5 h-1.5 rounded-full bg-champagne"></span> Git &amp; GitHub
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Professional Developer Profile & Specialization Card -->
+        <div class="lg:col-span-6 relative">
+          
+          <!-- Ambient Champagne Backlight Glow -->
+          <div class="absolute -inset-1.5 bg-gradient-to-tr from-champagne/20 via-champagne/5 to-transparent rounded-3xl blur-2xl opacity-70 pointer-events-none"></div>
+
+          <!-- Floating Status Pill Top Right -->
+          <div class="absolute -top-3.5 right-2 sm:right-4 z-20 flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-midnight/95 backdrop-blur-md border border-champagne/50 shadow-xl text-xs font-mono text-white">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            <span>Open for Junior Roles</span>
+          </div>
+
+          <!-- Main Card Container -->
+          <div class="relative rounded-2xl bg-midnight-card border border-borderdark overflow-hidden shadow-2xl p-2.5 sm:p-3">
+            
+            <!-- Image Frame -->
+            <div class="relative rounded-xl overflow-hidden aspect-[16/11] bg-midnight border border-borderdark/60">
+              <img src="assets/profile.jpg" alt="Yash Limbasiya - Python &amp; Odoo Developer" class="w-full h-full object-cover object-[center_20%] transition-transform duration-500 hover:scale-[1.02]" />
+              
+              <!-- Bottom Gradient Overlay for text contrast -->
+              <div class="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-midnight via-midnight/65 to-transparent"></div>
+              
+              <!-- Name & Role Overlay -->
+              <div class="absolute bottom-3 left-4 right-4 flex items-end justify-between">
+                <div>
+                  <h3 class="text-white font-extrabold text-lg sm:text-xl leading-tight">Yash Limbasiya</h3>
+                  <p class="text-champagne font-mono text-xs mt-0.5">Python &amp; Odoo ERP Developer</p>
+                </div>
+                <span class="text-[11px] font-mono text-mutedtext bg-midnight/85 px-2.5 py-1 rounded-md border border-borderdark hidden sm:inline-block">
+                  Gujarat, India
+                </span>
+              </div>
+            </div>
+
+            <!-- 3-Column Specialization Metrics Bar -->
+            <div class="mt-2.5 pt-2.5 px-1 border-t border-borderdark grid grid-cols-3 gap-2 text-center">
+              <div class="p-2.5 rounded-xl bg-midnight-surface border border-borderdark/60">
+                <span class="text-[10px] uppercase tracking-wider text-mutedtext block font-mono">Specialization</span>
+                <span class="text-xs font-bold text-white mt-0.5 block">Odoo 18 / 19</span>
+              </div>
+              <div class="p-2.5 rounded-xl bg-midnight-surface border border-borderdark/60">
+                <span class="text-[10px] uppercase tracking-wider text-mutedtext block font-mono">Backend Core</span>
+                <span class="text-xs font-bold text-white mt-0.5 block">Python &amp; ORM</span>
+              </div>
+              <div class="p-2.5 rounded-xl bg-midnight-surface border border-borderdark/60">
+                <span class="text-[10px] uppercase tracking-wider text-mutedtext block font-mono">Database</span>
+                <span class="text-xs font-bold text-white mt-0.5 block">PostgreSQL</span>
+              </div>
+            </div>
+
+            <!-- Mini Architecture Status Pill Underneath -->
+            <div class="mt-2.5 py-2 px-3 rounded-xl bg-midnight flex items-center justify-between text-[11px] font-mono text-mutedtext border border-borderdark/60">
+              <div class="flex items-center gap-2">
+                <i class="w-3.5 h-3.5 text-champagne" data-lucide="terminal"></i>
+                <span class="text-champagne">models.Model</span>
+                <span class="text-mutedtext hidden sm:inline">• Relational ERP Architecture</span>
+              </div>
+              <span class="text-white font-medium flex items-center gap-1">
+                <i class="w-3 h-3 text-champagne" data-lucide="check"></i> Verified Code
+              </span>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- About Me Section -->
+  <section class="py-20 bg-midnight text-white border-t border-borderdark" id="about">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="max-w-3xl mb-12">
+        <span class="text-xs font-semibold uppercase tracking-wider text-champagne font-mono block mb-1">Recruiter-Focused Profile</span>
+        <h2 class="text-3xl font-extrabold text-white">About Me</h2>
+        <p class="text-mutedtext mt-2 text-base leading-relaxed">
+          An honest, transparent look at my technical background, foundational skills, and dedication to growing as an ERP and backend developer.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
+        
+        <!-- Left: Bio & Quick Telemetry (6 Cols) -->
+        <div class="lg:col-span-6 space-y-5 text-mutedtext leading-relaxed text-sm md:text-base">
+          <div class="flex items-center gap-3.5 pb-1">
+            <img src="assets/profile.jpg" alt="Yash Limbasiya" class="w-14 h-14 rounded-full object-cover object-[center_20%] border-2 border-champagne/50 shadow-md" />
+            <div>
+              <h3 class="font-bold text-white text-base leading-tight">Yash Limbasiya</h3>
+              <p class="text-xs font-mono text-champagne">Python &amp; Odoo Developer • Gujarat, India</p>
+            </div>
+          </div>
+
+          <p>
+            Hello! I am <strong class="text-white font-bold">Yash Limbasiya</strong>, an aspiring <strong class="text-champagne font-bold">Python and Odoo Developer</strong> based in Gujarat, India. As a fresher/junior professional, my focus is centered on understanding core software design principles and translating business workflows into robust Odoo modules.
+          </p>
+          <p>
+            My journey began with deep exploration of <strong class="text-white font-bold">Python programming</strong>—mastering Object-Oriented Programming (OOP), modular architecture, data structures, and clean coding paradigms. Recognizing the growing demand for modern Enterprise Resource Planning (ERP), I directed my effort toward <strong class="text-champagne font-bold">Odoo 18 and Odoo 19 development</strong>.
+          </p>
+          <p>
+            I take pride in continuous, disciplined learning: studying Odoo core source code, practicing PostgreSQL schema design, and experimenting with real-life enterprise automation scenarios such as manufacturing job work and service ticket management.
+          </p>
+
+          <!-- Philosophy Highlight Pill -->
+          <div class="p-3.5 rounded-xl bg-midnight-card border border-champagne/30 text-xs text-white flex items-center gap-3 shadow-sm">
+            <div class="w-8 h-8 rounded-lg bg-midnight-surface border border-borderdark text-champagne flex items-center justify-center shrink-0">
+              <i class="w-4 h-4 text-champagne" data-lucide="sparkles"></i>
+            </div>
+            <span class="font-mono text-[11px] leading-relaxed text-champagne-accent">
+              <strong class="text-white">Core Principle:</strong> "Bridging complex business operations with clean, maintainable ERP architecture."
+            </span>
+          </div>
+
+          <!-- Key Details Grid with Visual Cards -->
+          <div class="grid grid-cols-2 gap-3.5 pt-2 text-xs">
+            <div class="p-3.5 rounded-xl bg-midnight-card border border-borderdark shadow-sm hover:border-champagne/40 transition-colors">
+              <div class="flex items-center gap-2 mb-1 text-mutedtext text-[11px] font-mono">
+                <i class="w-3.5 h-3.5 text-champagne" data-lucide="award"></i>
+                <span>Experience:</span>
+              </div>
+              <span class="font-bold text-white text-sm">Fresher / Junior</span>
+            </div>
+            <div class="p-3.5 rounded-xl bg-midnight-card border border-borderdark shadow-sm hover:border-champagne/40 transition-colors">
+              <div class="flex items-center gap-2 mb-1 text-mutedtext text-[11px] font-mono">
+                <i class="w-3.5 h-3.5 text-champagne" data-lucide="briefcase"></i>
+                <span>Target Roles:</span>
+              </div>
+              <span class="font-bold text-white text-sm">Jr. Python / Odoo Dev</span>
+            </div>
+            <div class="p-3.5 rounded-xl bg-midnight-card border border-borderdark shadow-sm hover:border-champagne/40 transition-colors">
+              <div class="flex items-center gap-2 mb-1 text-mutedtext text-[11px] font-mono">
+                <i class="w-3.5 h-3.5 text-champagne" data-lucide="map-pin"></i>
+                <span>Base Location:</span>
+              </div>
+              <span class="font-bold text-white text-sm">Gujarat, India</span>
+            </div>
+            <div class="p-3.5 rounded-xl bg-midnight-card border border-borderdark shadow-sm hover:border-champagne/40 transition-colors">
+              <div class="flex items-center gap-2 mb-1 text-mutedtext text-[11px] font-mono">
+                <i class="w-3.5 h-3.5 text-champagne" data-lucide="terminal"></i>
+                <span>Daily Stack:</span>
+              </div>
+              <span class="font-bold text-white text-sm">VS Code / PyCharm</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Developer Cockpit & Architecture Visualization (6 Cols) -->
+        <div class="lg:col-span-6">
+          <div class="rounded-2xl bg-midnight-card border border-champagne/30 shadow-2xl overflow-hidden">
+            
+            <!-- Window Title Bar -->
+            <div class="bg-midnight px-4 py-3 border-b border-borderdark flex items-center justify-between text-xs">
+              <div class="flex items-center gap-2">
+                <span class="w-3 h-3 rounded-full bg-rose-500/80 inline-block"></span>
+                <span class="w-3 h-3 rounded-full bg-amber-500/80 inline-block"></span>
+                <span class="w-3 h-3 rounded-full bg-emerald-500/80 inline-block"></span>
+                <span class="ml-2 font-mono text-[11px] text-mutedtext hidden sm:inline">yash@developer-metrics: ~/profile-visualizer</span>
+              </div>
+              <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10px] font-mono text-emerald-400 bg-emerald-500/10 border border-emerald-500/30">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                Live Metrics
+              </span>
+            </div>
+
+            <div class="p-5 sm:p-6 space-y-6">
+              
+              <!-- Visual Widget 1: Competency & Proficiency Bars -->
+              <div>
+                <div class="flex items-center justify-between mb-3.5">
+                  <span class="text-xs font-mono font-bold uppercase tracking-wider text-champagne flex items-center gap-1.5">
+                    <i class="w-3.5 h-3.5 text-champagne" data-lucide="bar-chart-3"></i>
+                    Core Proficiency Weightage
+                  </span>
+                  <span class="text-[11px] font-mono text-mutedtext">Verified Foundation</span>
+                </div>
+
+                <div class="space-y-3">
+                  <!-- Python OOP -->
+                  <div>
+                    <div class="flex justify-between text-xs mb-1 font-mono">
+                      <span class="text-white font-medium flex items-center gap-1.5">
+                        <i class="w-3 h-3 text-champagne" data-lucide="terminal"></i> Python 3 Core &amp; OOP Logic
+                      </span>
+                      <span class="text-champagne font-bold">92%</span>
+                    </div>
+                    <div class="h-2 w-full rounded-full bg-midnight-surface border border-borderdark overflow-hidden">
+                      <div class="h-full rounded-full bg-gradient-to-r from-champagne via-champagne-accent to-amber-300 shadow-[0_0_10px_rgba(214,190,145,0.4)]" style="width: 92%;"></div>
+                    </div>
+                  </div>
+
+                  <!-- Odoo 18/19 Architecture -->
+                  <div>
+                    <div class="flex justify-between text-xs mb-1 font-mono">
+                      <span class="text-white font-medium flex items-center gap-1.5">
+                        <i class="w-3 h-3 text-champagne" data-lucide="layers"></i> Odoo 18 &amp; 19 Custom Modules
+                      </span>
+                      <span class="text-champagne font-bold">88%</span>
+                    </div>
+                    <div class="h-2 w-full rounded-full bg-midnight-surface border border-borderdark overflow-hidden">
+                      <div class="h-full rounded-full bg-gradient-to-r from-champagne via-champagne-accent to-amber-300 shadow-[0_0_10px_rgba(214,190,145,0.4)]" style="width: 88%;"></div>
+                    </div>
+                  </div>
+
+                  <!-- PostgreSQL & ORM -->
+                  <div>
+                    <div class="flex justify-between text-xs mb-1 font-mono">
+                      <span class="text-white font-medium flex items-center gap-1.5">
+                        <i class="w-3 h-3 text-champagne" data-lucide="database"></i> PostgreSQL &amp; ORM Relational Mapping
+                      </span>
+                      <span class="text-champagne font-bold">86%</span>
+                    </div>
+                    <div class="h-2 w-full rounded-full bg-midnight-surface border border-borderdark overflow-hidden">
+                      <div class="h-full rounded-full bg-gradient-to-r from-champagne via-champagne-accent to-amber-300 shadow-[0_0_10px_rgba(214,190,145,0.4)]" style="width: 86%;"></div>
+                    </div>
+                  </div>
+
+                  <!-- XML & QWeb -->
+                  <div>
+                    <div class="flex justify-between text-xs mb-1 font-mono">
+                      <span class="text-white font-medium flex items-center gap-1.5">
+                        <i class="w-3 h-3 text-champagne" data-lucide="file-code"></i> XML Views, Kanban &amp; QWeb Reports
+                      </span>
+                      <span class="text-champagne font-bold">84%</span>
+                    </div>
+                    <div class="h-2 w-full rounded-full bg-midnight-surface border border-borderdark overflow-hidden">
+                      <div class="h-full rounded-full bg-gradient-to-r from-champagne via-champagne-accent to-amber-300 shadow-[0_0_10px_rgba(214,190,145,0.4)]" style="width: 84%;"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Visual Widget 2: Development Architecture Flowchart -->
+              <div class="pt-2 border-t border-borderdark">
+                <div class="flex items-center justify-between mb-3">
+                  <span class="text-xs font-mono font-bold uppercase tracking-wider text-champagne flex items-center gap-1.5">
+                    <i class="w-3.5 h-3.5 text-champagne" data-lucide="git-merge"></i>
+                    ERP Module Engineering Flow
+                  </span>
+                  <span class="text-[10px] font-mono text-mutedtext">Step-by-Step</span>
+                </div>
+
+                <!-- 4-Stage Connected Workflow Cards -->
+                <div class="grid grid-cols-2 gap-2 text-xs">
+                  
+                  <!-- Stage 1 -->
+                  <div class="p-2.5 rounded-xl bg-midnight-surface/80 border border-borderdark/80 flex items-start gap-2.5">
+                    <div class="w-6 h-6 rounded-md bg-champagne text-darktext flex items-center justify-center font-bold text-[10px] shrink-0 mt-0.5">
+                      01
+                    </div>
+                    <div>
+                      <span class="font-bold text-white text-xs block leading-tight">Python Models</span>
+                      <span class="text-[10px] text-mutedtext font-mono">models.Model &amp; Fields</span>
+                    </div>
+                  </div>
+
+                  <!-- Stage 2 -->
+                  <div class="p-2.5 rounded-xl bg-midnight-surface/80 border border-borderdark/80 flex items-start gap-2.5">
+                    <div class="w-6 h-6 rounded-md bg-champagne text-darktext flex items-center justify-center font-bold text-[10px] shrink-0 mt-0.5">
+                      02
+                    </div>
+                    <div>
+                      <span class="font-bold text-white text-xs block leading-tight">PostgreSQL</span>
+                      <span class="text-[10px] text-mutedtext font-mono">Auto Table Schemas</span>
+                    </div>
+                  </div>
+
+                  <!-- Stage 3 -->
+                  <div class="p-2.5 rounded-xl bg-midnight-surface/80 border border-borderdark/80 flex items-start gap-2.5">
+                    <div class="w-6 h-6 rounded-md bg-champagne text-darktext flex items-center justify-center font-bold text-[10px] shrink-0 mt-0.5">
+                      03
+                    </div>
+                    <div>
+                      <span class="font-bold text-white text-xs block leading-tight">XML Interface</span>
+                      <span class="text-[10px] text-mutedtext font-mono">Form, Tree &amp; Kanban</span>
+                    </div>
+                  </div>
+
+                  <!-- Stage 4 -->
+                  <div class="p-2.5 rounded-xl bg-midnight-surface/80 border border-borderdark/80 flex items-start gap-2.5">
+                    <div class="w-6 h-6 rounded-md bg-champagne text-darktext flex items-center justify-center font-bold text-[10px] shrink-0 mt-0.5">
+                      04
+                    </div>
+                    <div>
+                      <span class="font-bold text-white text-xs block leading-tight">Security &amp; QWeb</span>
+                      <span class="text-[10px] text-mutedtext font-mono">ir.model.access &amp; PDF</span>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+              <!-- Visual Widget 3: Live Status Highlights Strip -->
+              <div class="pt-2 border-t border-borderdark grid grid-cols-3 gap-2 text-center text-xs font-mono">
+                <div class="p-2 rounded-lg bg-midnight border border-borderdark/60">
+                  <span class="text-[10px] text-mutedtext block">Code Paradigm</span>
+                  <span class="text-xs font-bold text-champagne mt-0.5 block">OOP &amp; Clean</span>
+                </div>
+                <div class="p-2 rounded-lg bg-midnight border border-borderdark/60">
+                  <span class="text-[10px] text-mutedtext block">Version Target</span>
+                  <span class="text-xs font-bold text-white mt-0.5 block">Odoo 18 / 19</span>
+                </div>
+                <div class="p-2 rounded-lg bg-midnight border border-borderdark/60">
+                  <span class="text-[10px] text-mutedtext block">Status</span>
+                  <span class="text-xs font-bold text-emerald-400 mt-0.5 block">Ready to Hire</span>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills & Technologies (Inline with Icons) -->
+  <section class="py-14 sm:py-16 bg-midnight border-t border-borderdark text-white relative overflow-hidden" id="skills">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-2xl mx-auto mb-8">
+        <span class="text-xs font-semibold uppercase tracking-wider text-champagne font-mono block mb-1">Technical Stack</span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-white">Skills &amp; Technologies</h2>
+        <p class="text-mutedtext mt-1.5 text-xs sm:text-sm">
+          Core languages, frameworks, database systems, and development tools I work with daily.
+        </p>
+      </div>
+
+      <!-- All Skills In Line With Icons -->
+      <div class="flex flex-wrap items-center justify-center gap-2.5 sm:gap-3.5">
+        
+        <!-- Python -->
+        <div class="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-xl bg-midnight-card border border-borderdark hover:border-champagne hover:bg-midnight-surface text-white text-xs sm:text-sm font-semibold transition-all shadow-sm hover:-translate-y-0.5 group">
+          <i class="w-4 h-4 text-champagne group-hover:scale-110 transition-transform" data-lucide="terminal"></i>
+          <span>Python 3.x</span>
+        </div>
+
+        <!-- Odoo 18 / 19 -->
+        <div class="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-xl bg-midnight-card border border-champagne/40 hover:border-champagne hover:bg-midnight-surface text-white text-xs sm:text-sm font-semibold transition-all shadow-sm hover:-translate-y-0.5 group">
+          <i class="w-4 h-4 text-champagne group-hover:scale-110 transition-transform" data-lucide="layers"></i>
+          <span>Odoo 18 &amp; 19</span>
+        </div>
+
+        <!-- Odoo ORM -->
+        <div class="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-xl bg-midnight-card border border-borderdark hover:border-champagne hover:bg-midnight-surface text-white text-xs sm:text-sm font-semibold transition-all shadow-sm hover:-translate-y-0.5 group">
+          <i class="w-4 h-4 text-champagne group-hover:scale-110 transition-transform" data-lucide="cpu"></i>
+          <span>Odoo ORM</span>
+        </div>
+
+        <!-- PostgreSQL -->
+        <div class="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-xl bg-midnight-card border border-borderdark hover:border-champagne hover:bg-midnight-surface text-white text-xs sm:text-sm font-semibold transition-all shadow-sm hover:-translate-y-0.5 group">
+          <i class="w-4 h-4 text-champagne group-hover:scale-110 transition-transform" data-lucide="database"></i>
+          <span>PostgreSQL</span>
+        </div>
+
+        <!-- XML Architecture -->
+        <div class="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-xl bg-midnight-card border border-borderdark hover:border-champagne hover:bg-midnight-surface text-white text-xs sm:text-sm font-semibold transition-all shadow-sm hover:-translate-y-0.5 group">
+          <i class="w-4 h-4 text-champagne group-hover:scale-110 transition-transform" data-lucide="file-code"></i>
+          <span>XML Views</span>
+        </div>
+
+        <!-- QWeb Reports -->
+        <div class="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-xl bg-midnight-card border border-borderdark hover:border-champagne hover:bg-midnight-surface text-white text-xs sm:text-sm font-semibold transition-all shadow-sm hover:-translate-y-0.5 group">
+          <i class="w-4 h-4 text-champagne group-hover:scale-110 transition-transform" data-lucide="file-text"></i>
+          <span>QWeb Reports</span>
+        </div>
+
+        <!-- OOP Architecture -->
+        <div class="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-xl bg-midnight-card border border-borderdark hover:border-champagne hover:bg-midnight-surface text-white text-xs sm:text-sm font-semibold transition-all shadow-sm hover:-translate-y-0.5 group">
+          <i class="w-4 h-4 text-champagne group-hover:scale-110 transition-transform" data-lucide="braces"></i>
+          <span>OOP Principles</span>
+        </div>
+
+        <!-- Git & GitHub -->
+        <div class="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-xl bg-midnight-card border border-borderdark hover:border-champagne hover:bg-midnight-surface text-white text-xs sm:text-sm font-semibold transition-all shadow-sm hover:-translate-y-0.5 group">
+          <i class="w-4 h-4 text-champagne group-hover:scale-110 transition-transform" data-lucide="git-branch"></i>
+          <span>Git &amp; GitHub</span>
+        </div>
+
+        <!-- REST APIs & JSON -->
+        <div class="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-xl bg-midnight-card border border-borderdark hover:border-champagne hover:bg-midnight-surface text-white text-xs sm:text-sm font-semibold transition-all shadow-sm hover:-translate-y-0.5 group">
+          <i class="w-4 h-4 text-champagne group-hover:scale-110 transition-transform" data-lucide="globe"></i>
+          <span>REST APIs &amp; JSON</span>
+        </div>
+
+        <!-- Security & ACL -->
+        <div class="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-xl bg-midnight-card border border-borderdark hover:border-champagne hover:bg-midnight-surface text-white text-xs sm:text-sm font-semibold transition-all shadow-sm hover:-translate-y-0.5 group">
+          <i class="w-4 h-4 text-champagne group-hover:scale-110 transition-transform" data-lucide="shield-check"></i>
+          <span>Security &amp; ACL Rules</span>
+        </div>
+
+        <!-- Kanban & UI Flow -->
+        <div class="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-xl bg-midnight-card border border-borderdark hover:border-champagne hover:bg-midnight-surface text-white text-xs sm:text-sm font-semibold transition-all shadow-sm hover:-translate-y-0.5 group">
+          <i class="w-4 h-4 text-champagne group-hover:scale-110 transition-transform" data-lucide="layout-grid"></i>
+          <span>Kanban &amp; Tree Views</span>
+        </div>
+
+        <!-- Workflow Automation -->
+        <div class="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-xl bg-midnight-card border border-borderdark hover:border-champagne hover:bg-midnight-surface text-white text-xs sm:text-sm font-semibold transition-all shadow-sm hover:-translate-y-0.5 group">
+          <i class="w-4 h-4 text-champagne group-hover:scale-110 transition-transform" data-lucide="zap"></i>
+          <span>Workflow Automation</span>
+        </div>
+
+        <!-- PyCharm & VS Code -->
+        <div class="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-xl bg-midnight-card border border-borderdark hover:border-champagne hover:bg-midnight-surface text-white text-xs sm:text-sm font-semibold transition-all shadow-sm hover:-translate-y-0.5 group">
+          <i class="w-4 h-4 text-champagne group-hover:scale-110 transition-transform" data-lucide="code-2"></i>
+          <span>PyCharm &amp; VS Code</span>
+        </div>
+
+        <!-- pgAdmin & DB Tools -->
+        <div class="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-xl bg-midnight-card border border-borderdark hover:border-champagne hover:bg-midnight-surface text-white text-xs sm:text-sm font-semibold transition-all shadow-sm hover:-translate-y-0.5 group">
+          <i class="w-4 h-4 text-champagne group-hover:scale-110 transition-transform" data-lucide="server"></i>
+          <span>pgAdmin &amp; DB Tools</span>
+        </div>
+
+        <!-- Relational Data Modeling -->
+        <div class="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-xl bg-midnight-card border border-borderdark hover:border-champagne hover:bg-midnight-surface text-white text-xs sm:text-sm font-semibold transition-all shadow-sm hover:-translate-y-0.5 group">
+          <i class="w-4 h-4 text-champagne group-hover:scale-110 transition-transform" data-lucide="boxes"></i>
+          <span>Relational Modeling</span>
+        </div>
+
+        <!-- Testing & Debugging -->
+        <div class="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-xl bg-midnight-card border border-borderdark hover:border-champagne hover:bg-midnight-surface text-white text-xs sm:text-sm font-semibold transition-all shadow-sm hover:-translate-y-0.5 group">
+          <i class="w-4 h-4 text-champagne group-hover:scale-110 transition-transform" data-lucide="bug"></i>
+          <span>Testing &amp; Debugging</span>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Featured Projects (Highlighted Centerpiece) -->
+  <section class="py-24 bg-midnight border-t border-borderdark relative overflow-hidden" id="projects">
+    <!-- Ambient Golden Backlight Glow -->
+    <div class="absolute top-12 left-1/2 -translate-x-1/2 w-[850px] h-[380px] bg-gradient-to-r from-champagne/15 via-amber-500/10 to-indigo-500/10 rounded-full blur-[140px] pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <!-- Section Header with Highlight Badge -->
+      <div class="max-w-3xl mb-10">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-champagne/10 border border-champagne/30 text-champagne text-xs font-mono font-semibold mb-3 shadow-sm">
+          <i class="w-3.5 h-3.5 text-champagne" data-lucide="sparkles"></i>
+          <span>Core Portfolio Showcase • Production-Ready ERP Systems</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+          Featured <span class="text-transparent bg-clip-text bg-gradient-to-r from-champagne via-champagne-accent to-amber-200">Projects &amp; Solutions</span>
+        </h2>
+        <p class="text-mutedtext mt-2.5 text-base leading-relaxed">
+          These practical systems demonstrate how I model complex business workflows, design relational databases, and construct intuitive Odoo interfaces.
+        </p>
+      </div>
+
+      <!-- Filter Tabs -->
+      <div class="flex items-center gap-2.5 mb-10 border-b border-borderdark pb-4 overflow-x-auto text-xs font-medium">
+        <button class="project-filter-btn px-4 py-2 rounded-lg bg-champagne text-darktext font-bold transition-all shadow-sm" data-filter="all">All Projects (2)</button>
+        <button class="project-filter-btn px-4 py-2 rounded-lg bg-midnight-surface text-mutedtext hover:text-white border border-borderdark transition-all" data-filter="odoo">Odoo ERP Modules</button>
+        <button class="project-filter-btn px-4 py-2 rounded-lg bg-midnight-surface text-mutedtext hover:text-white border border-borderdark transition-all" data-filter="python">Python &amp; PostgreSQL</button>
+      </div>
+
+      <!-- Projects Grid with Highlighted Spotlight Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
+        
+        <!-- Project 1: Manufacturing & Job Work Management System -->
+        <div class="project-card-highlight project-card rounded-2xl overflow-hidden flex flex-col justify-between group" data-category="odoo">
+          <!-- Subtle Top Gradient Glow Bar -->
+          <div class="h-1 bg-gradient-to-r from-champagne via-champagne-accent to-amber-300"></div>
+
+          <div class="p-6 md:p-8">
+            <div class="flex flex-wrap items-center justify-between gap-2 mb-5">
+              <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-bold text-darktext bg-gradient-to-r from-champagne to-champagne-accent shadow-sm">
+                <i class="w-3.5 h-3.5 text-darktext" data-lucide="layers"></i>
+                Odoo 18/19 Module Architecture
+              </span>
+              <span class="inline-flex items-center gap-1.5 text-xs font-mono text-emerald-400 bg-emerald-500/10 px-3 py-1 rounded-full border border-emerald-500/30">
+                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                Active Build
+              </span>
+            </div>
+
+            <h3 class="text-2xl font-extrabold text-white mb-3 group-hover:text-champagne transition-colors">
+              Manufacturing &amp; Job Work Management System
+            </h3>
+
+            <p class="text-mutedtext text-sm leading-relaxed mb-6">
+              A custom ERP module designed to manage raw material dispatch, multi-stage production tracking, and outsourced job-work vendor processes. It bridges internal manufacturing with third-party processing partners.
+            </p>
+
+            <!-- Highlighted Feature Modules Box -->
+            <div class="p-4 rounded-xl bg-midnight-surface/90 border border-borderdark/80 mb-6 space-y-3 shadow-inner">
+              <span class="text-xs font-mono font-bold uppercase text-champagne tracking-wider flex items-center gap-1.5">
+                <i class="w-3.5 h-3.5 text-champagne" data-lucide="cpu"></i>
+                Key Functional Modules &amp; Models:
+              </span>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-white">
+                <span class="flex items-center gap-2 bg-midnight/70 px-2.5 py-1.5 rounded-lg border border-borderdark/60"><i class="w-3.5 h-3.5 text-champagne shrink-0" data-lucide="check-circle-2"></i> Bill of Materials (BoM) Mapping</span>
+                <span class="flex items-center gap-2 bg-midnight/70 px-2.5 py-1.5 rounded-lg border border-borderdark/60"><i class="w-3.5 h-3.5 text-champagne shrink-0" data-lucide="check-circle-2"></i> Job Work Orders (<code class="font-mono text-champagne">job.work.order</code>)</span>
+                <span class="flex items-center gap-2 bg-midnight/70 px-2.5 py-1.5 rounded-lg border border-borderdark/60"><i class="w-3.5 h-3.5 text-champagne shrink-0" data-lucide="check-circle-2"></i> Vendor Delivery &amp; Receipt</span>
+                <span class="flex items-center gap-2 bg-midnight/70 px-2.5 py-1.5 rounded-lg border border-borderdark/60"><i class="w-3.5 h-3.5 text-champagne shrink-0" data-lucide="check-circle-2"></i> QWeb Challan &amp; Work Report</span>
+              </div>
+            </div>
+
+            <div class="flex flex-wrap gap-2 pt-1">
+              <span class="px-2.5 py-1 rounded-md bg-midnight text-[11px] font-mono text-champagne border border-borderdark hover:border-champagne/60 transition-colors">Python 3.11</span>
+              <span class="px-2.5 py-1 rounded-md bg-midnight text-[11px] font-mono text-champagne border border-borderdark hover:border-champagne/60 transition-colors">Odoo ORM</span>
+              <span class="px-2.5 py-1 rounded-md bg-midnight text-[11px] font-mono text-champagne border border-borderdark hover:border-champagne/60 transition-colors">PostgreSQL</span>
+              <span class="px-2.5 py-1 rounded-md bg-midnight text-[11px] font-mono text-champagne border border-borderdark hover:border-champagne/60 transition-colors">XML Views</span>
+              <span class="px-2.5 py-1 rounded-md bg-midnight text-[11px] font-mono text-champagne border border-borderdark hover:border-champagne/60 transition-colors">ir.model.access</span>
+            </div>
+          </div>
+
+          <div class="px-6 py-4 bg-midnight-surface/90 border-t border-borderdark/80 flex items-center justify-between text-xs">
+            <a class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-champagne hover:bg-champagne-hover text-darktext font-bold text-xs shadow-md transition-all group/btn" href="https://github.com/limbasiyayash32" rel="noopener noreferrer" target="_blank">
+              <i class="w-4 h-4 text-darktext" data-lucide="github"></i>
+              <span>Explore on GitHub</span>
+              <i class="w-3.5 h-3.5 transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" data-lucide="arrow-up-right"></i>
+            </a>
+            <span class="text-champagne/90 font-mono text-[11px] flex items-center gap-1.5">
+              <i class="w-3.5 h-3.5 text-champagne" data-lucide="terminal"></i>
+              Verified Code
+            </span>
+          </div>
+        </div>
+
+        <!-- Project 2: Vehicle Service Management System -->
+        <div class="project-card-highlight project-card rounded-2xl overflow-hidden flex flex-col justify-between group" data-category="odoo">
+          <!-- Subtle Top Gradient Glow Bar -->
+          <div class="h-1 bg-gradient-to-r from-champagne via-champagne-accent to-amber-300"></div>
+
+          <div class="p-6 md:p-8">
+            <div class="flex flex-wrap items-center justify-between gap-2 mb-5">
+              <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-bold text-darktext bg-gradient-to-r from-champagne to-champagne-accent shadow-sm">
+                <i class="w-3.5 h-3.5 text-darktext" data-lucide="briefcase"></i>
+                Service &amp; CRM ERP Solution
+              </span>
+              <span class="inline-flex items-center gap-1.5 text-xs font-mono text-emerald-400 bg-emerald-500/10 px-3 py-1 rounded-full border border-emerald-500/30">
+                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                Active Build
+              </span>
+            </div>
+
+            <h3 class="text-2xl font-extrabold text-white mb-3 group-hover:text-champagne transition-colors">
+              Vehicle Service Management System
+            </h3>
+
+            <p class="text-mutedtext text-sm leading-relaxed mb-6">
+              An end-to-end service tracking platform for automotive workshops. Manages customer vehicle registry, service requests, mechanic assignment, inventory parts consumption, and invoicing.
+            </p>
+
+            <!-- Highlighted Feature Modules Box -->
+            <div class="p-4 rounded-xl bg-midnight-surface/90 border border-borderdark/80 mb-6 space-y-3 shadow-inner">
+              <span class="text-xs font-mono font-bold uppercase text-champagne tracking-wider flex items-center gap-1.5">
+                <i class="w-3.5 h-3.5 text-champagne" data-lucide="cpu"></i>
+                Key Functional Modules &amp; Models:
+              </span>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-white">
+                <span class="flex items-center gap-2 bg-midnight/70 px-2.5 py-1.5 rounded-lg border border-borderdark/60"><i class="w-3.5 h-3.5 text-champagne shrink-0" data-lucide="check-circle-2"></i> Interactive Kanban Pipeline</span>
+                <span class="flex items-center gap-2 bg-midnight/70 px-2.5 py-1.5 rounded-lg border border-borderdark/60"><i class="w-3.5 h-3.5 text-champagne shrink-0" data-lucide="check-circle-2"></i> Vehicle &amp; Customer (<code class="font-mono text-champagne">res.partner</code>)</span>
+                <span class="flex items-center gap-2 bg-midnight/70 px-2.5 py-1.5 rounded-lg border border-borderdark/60"><i class="w-3.5 h-3.5 text-champagne shrink-0" data-lucide="check-circle-2"></i> Automated Repair Transitions</span>
+                <span class="flex items-center gap-2 bg-midnight/70 px-2.5 py-1.5 rounded-lg border border-borderdark/60"><i class="w-3.5 h-3.5 text-champagne shrink-0" data-lucide="check-circle-2"></i> Service History &amp; Invoices</span>
+              </div>
+            </div>
+
+            <div class="flex flex-wrap gap-2 pt-1">
+              <span class="px-2.5 py-1 rounded-md bg-midnight text-[11px] font-mono text-champagne border border-borderdark hover:border-champagne/60 transition-colors">Odoo 18 / 19</span>
+              <span class="px-2.5 py-1 rounded-md bg-midnight text-[11px] font-mono text-champagne border border-borderdark hover:border-champagne/60 transition-colors">Kanban View</span>
+              <span class="px-2.5 py-1 rounded-md bg-midnight text-[11px] font-mono text-champagne border border-borderdark hover:border-champagne/60 transition-colors">PostgreSQL</span>
+              <span class="px-2.5 py-1 rounded-md bg-midnight text-[11px] font-mono text-champagne border border-borderdark hover:border-champagne/60 transition-colors">Computed Fields</span>
+              <span class="px-2.5 py-1 rounded-md bg-midnight text-[11px] font-mono text-champagne border border-borderdark hover:border-champagne/60 transition-colors">QWeb Invoices</span>
+            </div>
+          </div>
+
+          <div class="px-6 py-4 bg-midnight-surface/90 border-t border-borderdark/80 flex items-center justify-between text-xs">
+            <a class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-champagne hover:bg-champagne-hover text-darktext font-bold text-xs shadow-md transition-all group/btn" href="https://github.com/limbasiyayash32" rel="noopener noreferrer" target="_blank">
+              <i class="w-4 h-4 text-darktext" data-lucide="github"></i>
+              <span>Explore on GitHub</span>
+              <i class="w-3.5 h-3.5 transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" data-lucide="arrow-up-right"></i>
+            </a>
+            <span class="text-champagne/90 font-mono text-[11px] flex items-center gap-1.5">
+              <i class="w-3.5 h-3.5 text-champagne" data-lucide="terminal"></i>
+              Verified Code
+            </span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Authenticity Notice for Recruiters -->
+      <div class="mt-10 p-5 rounded-2xl bg-midnight-card border border-champagne/40 text-xs text-mutedtext flex items-start gap-3.5 shadow-xl">
+        <div class="w-9 h-9 rounded-lg bg-champagne/10 border border-champagne/30 text-champagne flex items-center justify-center shrink-0">
+          <i class="w-5 h-5 text-champagne" data-lucide="shield-check"></i>
+        </div>
+        <div>
+          <strong class="text-white text-sm block mb-0.5">Note to Technical Recruiters:</strong>
+          These projects are structured to demonstrate authentic code architecture, real database relationships, and strict Odoo conventions rather than generic portfolio mockups. Complete source code, manifests, and models are available for inspection on GitHub.
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Odoo Development Architecture (Midnight Navy Background) -->
+  <section class="py-20 bg-midnight border-t border-borderdark" id="odoo-expertise">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="max-w-3xl mb-12">
+        <span class="text-xs font-semibold uppercase tracking-wider text-champagne font-mono block mb-1">Framework Understanding</span>
+        <h2 class="text-3xl font-extrabold text-white">Odoo Development Architecture</h2>
+        <p class="text-mutedtext mt-2 text-sm leading-relaxed">
+          How I construct modular business systems in Odoo: from defining Python relational ORM models, connecting PostgreSQL schemas, designing XML views, enforcing ACL security rules, to generating client-facing reports.
+        </p>
+      </div>
+
+      <!-- 6 Architecture Pipeline Steps -->
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 mb-12">
+        <div class="premium-card p-4 rounded-xl bg-midnight-card border border-borderdark text-center">
+          <div class="w-8 h-8 mx-auto rounded-lg bg-champagne text-darktext flex items-center justify-center font-bold text-xs mb-2">1</div>
+          <h4 class="font-bold text-white text-xs mb-1">Python Models</h4>
+          <p class="text-[11px] text-mutedtext leading-normal">models.Model, Fields &amp; API logic</p>
+        </div>
+
+        <div class="premium-card p-4 rounded-xl bg-midnight-card border border-borderdark text-center">
+          <div class="w-8 h-8 mx-auto rounded-lg bg-champagne text-darktext flex items-center justify-center font-bold text-xs mb-2">2</div>
+          <h4 class="font-bold text-white text-xs mb-1">PostgreSQL</h4>
+          <p class="text-[11px] text-mutedtext leading-normal">Auto-synced DB tables &amp; indexes</p>
+        </div>
+
+        <div class="premium-card p-4 rounded-xl bg-midnight-card border border-borderdark text-center">
+          <div class="w-8 h-8 mx-auto rounded-lg bg-champagne text-darktext flex items-center justify-center font-bold text-xs mb-2">3</div>
+          <h4 class="font-bold text-white text-xs mb-1">XML Views</h4>
+          <p class="text-[11px] text-mutedtext leading-normal">Form, List, Search &amp; Kanban</p>
+        </div>
+
+        <div class="premium-card p-4 rounded-xl bg-midnight-card border border-borderdark text-center">
+          <div class="w-8 h-8 mx-auto rounded-lg bg-champagne text-darktext flex items-center justify-center font-bold text-xs mb-2">4</div>
+          <h4 class="font-bold text-white text-xs mb-1">Actions &amp; Menus</h4>
+          <p class="text-[11px] text-mutedtext leading-normal">ir.actions.act_window &amp; nav</p>
+        </div>
+
+        <div class="premium-card p-4 rounded-xl bg-midnight-card border border-borderdark text-center">
+          <div class="w-8 h-8 mx-auto rounded-lg bg-champagne text-darktext flex items-center justify-center font-bold text-xs mb-2">5</div>
+          <h4 class="font-bold text-white text-xs mb-1">Security / ACL</h4>
+          <p class="text-[11px] text-mutedtext leading-normal">ir.model.access.csv &amp; rules</p>
+        </div>
+
+        <div class="premium-card p-4 rounded-xl bg-midnight-card border border-borderdark text-center">
+          <div class="w-8 h-8 mx-auto rounded-lg bg-champagne text-darktext flex items-center justify-center font-bold text-xs mb-2">6</div>
+          <h4 class="font-bold text-white text-xs mb-1">QWeb Reports</h4>
+          <p class="text-[11px] text-mutedtext leading-normal">PDF generation &amp; invoices</p>
+        </div>
+      </div>
+
+      <!-- Side-by-Side Code Walkthrough -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        
+        <!-- Python Model Definition -->
+        <div class="rounded-xl bg-midnight-card border border-borderdark overflow-hidden font-mono text-xs shadow-lg">
+          <div class="bg-midnight px-4 py-3 border-b border-borderdark flex items-center justify-between text-mutedtext">
+            <span class="flex items-center gap-2 text-white">
+              <i class="w-4 h-4 text-champagne" data-lucide="file-code"></i>
+              models/vehicle_service.py
+            </span>
+            <span class="text-[10px] bg-midnight-surface px-2 py-0.5 rounded text-champagne border border-borderdark">Python 3 + Odoo ORM</span>
+          </div>
+          <pre class="p-4 text-mutedtext leading-relaxed overflow-x-auto"><code><span class="text-champagne">from</span> <span class="text-white">odoo</span> <span class="text-champagne">import</span> <span class="text-white">models, fields, api</span>
+
+<span class="text-champagne">class</span> <span class="text-white font-semibold">VehicleServiceRequest</span>(<span class="text-white">models.Model</span>):
+    <span class="text-mutedtext">_name</span> = <span class="text-champagne">'vehicle.service.request'</span>
+    <span class="text-mutedtext">_description</span> = <span class="text-champagne">'Vehicle Repair and Maintenance Request'</span>
+
+    <span class="text-white">name</span> = fields.Char(string=<span class="text-champagne">'Service #'</span>, required=<span class="text-champagne">True</span>)
+    <span class="text-white">partner_id</span> = fields.Many2one(<span class="text-champagne">'res.partner'</span>, string=<span class="text-champagne">'Customer'</span>, required=<span class="text-champagne">True</span>)
+    <span class="text-white">vehicle_plate</span> = fields.Char(string=<span class="text-champagne">'License Plate'</span>, required=<span class="text-champagne">True</span>)
+    <span class="text-white">total_cost</span> = fields.Float(string=<span class="text-champagne">'Total (INR)'</span>, compute=<span class="text-champagne">'_compute_total'</span>)
+
+    <span class="text-champagne">@api.depends</span>(<span class="text-champagne">'line_ids.price_subtotal'</span>)
+    <span class="text-champagne">def</span> <span class="text-white">_compute_total</span>(self):
+        <span class="text-champagne">for</span> record <span class="text-champagne">in</span> self:
+            record.total_cost = sum(record.line_ids.mapped(<span class="text-champagne">'price_subtotal'</span>))</code></pre>
+        </div>
+
+        <!-- XML Form View Definition -->
+        <div class="rounded-xl bg-midnight-card border border-borderdark overflow-hidden font-mono text-xs shadow-lg">
+          <div class="bg-midnight px-4 py-3 border-b border-borderdark flex items-center justify-between text-mutedtext">
+            <span class="flex items-center gap-2 text-white">
+              <i class="w-4 h-4 text-champagne" data-lucide="code"></i>
+              views/vehicle_service_views.xml
+            </span>
+            <span class="text-[10px] bg-midnight-surface px-2 py-0.5 rounded text-champagne border border-borderdark">Odoo 18/19 View</span>
+          </div>
+          <pre class="p-4 text-mutedtext leading-relaxed overflow-x-auto"><code><span class="text-mutedtext">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<span class="text-champagne">&lt;odoo&gt;</span>
+  <span class="text-white">&lt;record</span> <span class="text-champagne">id</span>=<span class="text-white">"view_vehicle_service_form"</span> <span class="text-champagne">model</span>=<span class="text-white">"ir.ui.view"</span><span class="text-white">&gt;</span>
+    <span class="text-white">&lt;field</span> <span class="text-champagne">name</span>=<span class="text-white">"name"</span><span class="text-white">&gt;</span>vehicle.service.request.form<span class="text-white">&lt;/field&gt;</span>
+    <span class="text-white">&lt;field</span> <span class="text-champagne">name</span>=<span class="text-white">"model"</span><span class="text-white">&gt;</span>vehicle.service.request<span class="text-white">&lt;/field&gt;</span>
+    <span class="text-white">&lt;field</span> <span class="text-champagne">name</span>=<span class="text-white">"arch"</span> <span class="text-champagne">type</span>=<span class="text-white">"xml"</span><span class="text-white">&gt;</span>
+      <span class="text-white">&lt;form</span> <span class="text-champagne">string</span>=<span class="text-white">"Service Request"</span><span class="text-white">&gt;</span>
+        <span class="text-white">&lt;sheet&gt;</span>
+          <span class="text-white">&lt;group&gt;</span>
+            <span class="text-white">&lt;field</span> <span class="text-champagne">name</span>=<span class="text-white">"partner_id"</span><span class="text-white">/&gt;</span>
+            <span class="text-white">&lt;field</span> <span class="text-champagne">name</span>=<span class="text-white">"vehicle_plate"</span><span class="text-white">/&gt;</span>
+            <span class="text-white">&lt;field</span> <span class="text-champagne">name</span>=<span class="text-white">"total_cost"</span> <span class="text-champagne">readonly</span>=<span class="text-white">"1"</span><span class="text-white">/&gt;</span>
+          <span class="text-white">&lt;/group&gt;</span>
+        <span class="text-white">&lt;/sheet&gt;</span>
+      <span class="text-white">&lt;/form&gt;</span>
+    <span class="text-white">&lt;/field&gt;</span>
+  <span class="text-white">&lt;/record&gt;</span>
+<span class="text-champagne">&lt;/odoo&gt;</span></code></pre>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Resume Section (Midnight Navy Background) -->
+  <section class="py-20 bg-midnight border-t border-borderdark" id="resume">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="max-w-2xl mx-auto">
+        <span class="text-xs font-semibold uppercase tracking-wider text-champagne font-mono block mb-1">Candidate Credentials</span>
+        <h2 class="text-3xl font-extrabold text-white">Curriculum Vitae / Resume</h2>
+        <p class="text-mutedtext mt-2 text-sm leading-relaxed mb-8">
+          Review my academic background, technical proficiencies, project breakdowns, and readiness to contribute immediately to your team.
+        </p>
+
+        <!-- Champagne-colored Download Resume Button -->
+        <div class="inline-flex flex-col sm:flex-row items-center gap-4">
+          <a class="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-champagne hover:bg-champagne-hover text-darktext font-bold text-base shadow-lg transition-all" href="https://drive.google.com/file/d/1Jv9c6JVnv1MXm03w-JmJJLgfOpknFCf5/view?usp=drive_link" rel="noopener noreferrer" target="_blank">
+            <i class="w-5 h-5 text-darktext" data-lucide="file-text"></i>
+            <span>Download Official Resume (PDF)</span>
+          </a>
+        </div>
+
+        <div class="mt-4 flex items-center justify-center gap-2 text-xs text-mutedtext font-mono">
+          <i class="w-3.5 h-3.5 text-champagne" data-lucide="link"></i>
+          <span>Google Drive Verified Link • Easy to view and download</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section (Midnight Navy Background) -->
+  <section class="py-20 bg-midnight border-t border-borderdark" id="contact">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="max-w-3xl mb-12">
+        <span class="text-xs font-semibold uppercase tracking-wider text-champagne font-mono block mb-1">Let's Connect</span>
+        <h2 class="text-3xl font-extrabold text-white">Get in Touch</h2>
+        <p class="text-mutedtext mt-2 text-sm leading-relaxed">
+          I am actively interviewing with development agencies, ERP implementation firms, and tech teams across Gujarat and remote locations.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+        
+        <!-- Contact Information Cards -->
+        <div class="lg:col-span-5 space-y-4">
+          
+          <!-- Email Card -->
+          <a class="premium-card p-5 rounded-xl bg-midnight-card border border-borderdark flex items-center gap-4 group" href="mailto:limbasiyayash36@gamil.com">
+            <div class="w-12 h-12 rounded-lg bg-midnight-surface border border-borderdark text-champagne flex items-center justify-center shrink-0 group-hover:border-champagne transition-colors">
+              <i class="w-5 h-5" data-lucide="mail"></i>
+            </div>
+            <div>
+              <span class="text-xs text-mutedtext block font-mono">Direct Email</span>
+              <span class="font-semibold text-white text-sm group-hover:text-champagne transition-colors">limbasiyayash36@gamil.com</span>
+            </div>
+          </a>
+
+          <!-- Phone / WhatsApp -->
+          <a class="premium-card p-5 rounded-xl bg-midnight-card border border-borderdark flex items-center gap-4 group" href="https://wa.me/917487983606" rel="noopener noreferrer" target="_blank">
+            <div class="w-12 h-12 rounded-lg bg-midnight-surface border border-borderdark text-champagne flex items-center justify-center shrink-0 group-hover:border-champagne transition-colors">
+              <i class="w-5 h-5" data-lucide="phone-call"></i>
+            </div>
+            <div>
+              <span class="text-xs text-mutedtext block font-mono">Phone / WhatsApp</span>
+              <span class="font-semibold text-white text-sm group-hover:text-champagne transition-colors">+91 7487983606</span>
+            </div>
+          </a>
+
+          <!-- LinkedIn -->
+          <a class="premium-card p-5 rounded-xl bg-midnight-card border border-borderdark flex items-center gap-4 group" href="https://www.linkedin.com/in/yash-limbasiya-671a10386" rel="noopener noreferrer" target="_blank">
+            <div class="w-12 h-12 rounded-lg bg-midnight-surface border border-borderdark text-champagne flex items-center justify-center shrink-0 group-hover:border-champagne transition-colors">
+              <i class="w-5 h-5" data-lucide="linkedin"></i>
+            </div>
+            <div>
+              <span class="text-xs text-mutedtext block font-mono">Professional Network</span>
+              <span class="font-semibold text-white text-sm group-hover:text-champagne transition-colors">LinkedIn Profile</span>
+            </div>
+          </a>
+
+          <!-- Location -->
+          <div class="premium-card p-5 rounded-xl bg-midnight-card border border-borderdark flex items-center gap-4">
+            <div class="w-12 h-12 rounded-lg bg-midnight-surface border border-borderdark text-champagne flex items-center justify-center shrink-0">
+              <i class="w-5 h-5" data-lucide="map-pin"></i>
+            </div>
+            <div>
+              <span class="text-xs text-mutedtext block font-mono">Location</span>
+              <span class="font-semibold text-white text-sm">Gujarat, India (Open to Relocation / Hybrid / Remote)</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Contact Message Form -->
+        <div class="lg:col-span-7">
+          <div class="p-6 md:p-8 rounded-2xl bg-midnight-card border border-borderdark shadow-xl">
+            <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+              <h3 class="text-xl font-bold text-white">Send a Message</h3>
+              <div class="flex items-center gap-2">
+                <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-mono text-emerald-400 bg-emerald-500/10 border border-emerald-500/30">
+                  <i class="w-3.5 h-3.5 text-emerald-400" data-lucide="message-circle"></i> WhatsApp
+                </span>
+                <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-mono text-champagne bg-champagne/10 border border-champagne/30">
+                  <i class="w-3.5 h-3.5 text-champagne" data-lucide="mail"></i> Email
+                </span>
+              </div>
+            </div>
+            <p class="text-xs text-mutedtext mb-6">Choose to send your inquiry directly via WhatsApp (+91 7487983606) or through Direct Email.</p>
+            
+            <form class="space-y-4" id="portfolioContactForm">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-xs font-mono font-medium text-mutedtext mb-1.5" for="senderName">Your Name *</label>
+                  <input class="w-full px-3.5 py-2.5 rounded-lg bg-midnight-surface border border-borderdark text-sm text-white placeholder-mutedtext focus:outline-none focus:border-champagne focus:ring-1 focus:ring-champagne transition-colors" id="senderName" placeholder="e.g. John Doe / Tech Recruiter" required="" type="text" />
+                </div>
+                <div>
+                  <label class="block text-xs font-mono font-medium text-mutedtext mb-1.5" for="senderEmail">Your Email *</label>
+                  <input class="w-full px-3.5 py-2.5 rounded-lg bg-midnight-surface border border-borderdark text-sm text-white placeholder-mutedtext focus:outline-none focus:border-champagne focus:ring-1 focus:ring-champagne transition-colors" id="senderEmail" placeholder="e.g. recruiter@company.com" required="" type="email" />
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-xs font-mono font-medium text-mutedtext mb-1.5" for="emailSubject">Subject *</label>
+                <input class="w-full px-3.5 py-2.5 rounded-lg bg-midnight-surface border border-borderdark text-sm text-white placeholder-mutedtext focus:outline-none focus:border-champagne focus:ring-1 focus:ring-champagne transition-colors" id="emailSubject" required="" type="text" value="Python / Odoo Developer Role" />
+              </div>
+
+              <div>
+                <label class="block text-xs font-mono font-medium text-mutedtext mb-1.5" for="emailMessage">Message *</label>
+                <textarea class="w-full px-3.5 py-2.5 rounded-lg bg-midnight-surface border border-borderdark text-sm text-white placeholder-mutedtext focus:outline-none focus:border-champagne focus:ring-1 focus:ring-champagne transition-colors" id="emailMessage" placeholder="Write your interview inquiry, job description, or question..." required="" rows="4"></textarea>
+              </div>
+
+              <!-- Status Alert Box -->
+              <div class="hidden text-xs p-3.5 rounded-xl font-mono" id="formStatusMsg"></div>
+
+              <!-- Two Action Options: WhatsApp & Email -->
+              <div class="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3">
+                <div class="flex flex-wrap items-center gap-2.5">
+                  <!-- WhatsApp Button -->
+                  <button class="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg bg-emerald-500 hover:bg-emerald-600 text-white font-bold text-xs sm:text-sm transition-all shadow-md group/wa" id="btnSendWhatsApp" type="button">
+                    <i class="w-4 h-4 text-white" data-lucide="message-circle"></i>
+                    <span>Send via WhatsApp</span>
+                    <i class="w-3.5 h-3.5 transition-transform group-hover/wa:translate-x-0.5" data-lucide="arrow-right"></i>
+                  </button>
+
+                  <!-- Email Button -->
+                  <button class="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg bg-champagne hover:bg-champagne-hover text-darktext font-bold text-xs sm:text-sm transition-all shadow-md group/mail" id="btnSendEmail" type="button">
+                    <i class="w-4 h-4 text-darktext" data-lucide="mail"></i>
+                    <span>Send via Email</span>
+                    <i class="w-3.5 h-3.5 transition-transform group-hover/mail:translate-x-0.5" data-lucide="arrow-right"></i>
+                  </button>
+                </div>
+
+                <span class="text-[11px] text-mutedtext font-mono flex items-center gap-1.5 sm:self-center">
+                  <i class="w-3.5 h-3.5 text-champagne" data-lucide="shield-check"></i> Choose your preferred method
+                </span>
+              </div>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer (Midnight Navy Background) -->
+  <footer class="border-t border-borderdark bg-midnight py-10 text-xs text-mutedtext">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+      
+      <!-- Brand & Title -->
+      <div class="flex items-center gap-3">
+        <div class="w-7 h-7 rounded-md bg-champagne text-darktext flex items-center justify-center font-bold text-xs">
+          YL
+        </div>
+        <div>
+          <span class="font-bold text-white">Yash Limbasiya</span> • Junior Python &amp; Odoo Developer • Gujarat, India
+        </div>
+      </div>
+
+      <!-- Footer Nav Links -->
+      <div class="flex flex-wrap items-center gap-4">
+        <a class="hover:text-champagne transition-colors" href="#about">About</a>
+        <a class="hover:text-champagne transition-colors" href="#skills">Skills</a>
+        <a class="hover:text-champagne transition-colors" href="#projects">Projects</a>
+        <a class="hover:text-champagne transition-colors" href="#odoo-expertise">Odoo Expertise</a>
+        <a class="hover:text-champagne transition-colors" href="#resume">Resume</a>
+        <a class="hover:text-champagne transition-colors" href="#contact">Contact</a>
+      </div>
+
+      <!-- Social Links & Copyright -->
+      <div class="flex items-center gap-4 text-mutedtext">
+        <a aria-label="GitHub" class="hover:text-champagne transition-colors" href="https://github.com/limbasiyayash32" rel="noopener noreferrer" target="_blank">
+          <i class="w-4 h-4" data-lucide="github"></i>
+        </a>
+        <a aria-label="LinkedIn" class="hover:text-champagne transition-colors" href="https://www.linkedin.com/in/yash-limbasiya-671a10386" rel="noopener noreferrer" target="_blank">
+          <i class="w-4 h-4" data-lucide="linkedin"></i>
+        </a>
+        <a aria-label="Email" class="hover:text-champagne transition-colors" href="mailto:limbasiyayash36@gamil.com">
+          <i class="w-4 h-4" data-lucide="mail"></i>
+        </a>
+        <span class="text-mutedtext">© 2026 Yash Limbasiya</span>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- JavaScript Functionality -->
+  <script>
+    // 1. Initialize Lucide Icons
+    lucide.createIcons();
+
+    // 2. Mobile Menu Toggle
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const mobileLinks = document.querySelectorAll('.mobile-link');
+
+    if (mobileMenuBtn && mobileMenu) {
+      mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+
+      mobileLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.add('hidden');
+        });
+      });
+    }
+
+    // 3. Project Filter Tabs
+    const filterButtons = document.querySelectorAll('.project-filter-btn');
+    const projectCards = document.querySelectorAll('.project-card');
+
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        // Reset button states
+        filterButtons.forEach(b => {
+          b.classList.remove('bg-champagne', 'text-darktext');
+          b.classList.add('bg-midnight-surface', 'text-mutedtext', 'border', 'border-borderdark');
+        });
+
+        // Activate clicked button
+        btn.classList.add('bg-champagne', 'text-darktext');
+        btn.classList.remove('bg-midnight-surface', 'text-mutedtext', 'border', 'border-borderdark');
+
+        const filterValue = btn.getAttribute('data-filter');
+
+        projectCards.forEach(card => {
+          const category = card.getAttribute('data-category');
+          if (filterValue === 'all' || category === filterValue) {
+            card.classList.remove('hidden');
+          } else {
+            card.classList.add('hidden');
+          }
+        });
+      });
+    });
+
+    // 4. Contact Form Submission (Both WhatsApp & Email Options)
+    const contactForm = document.getElementById('portfolioContactForm');
+    const statusMsg = document.getElementById('formStatusMsg');
+    const btnWhatsApp = document.getElementById('btnSendWhatsApp');
+    const btnEmail = document.getElementById('btnSendEmail');
+
+    if (contactForm && statusMsg) {
+      function getFormData() {
+        if (!contactForm.reportValidity()) {
+          return null;
+        }
+        return {
+          name: document.getElementById('senderName').value.trim(),
+          email: document.getElementById('senderEmail').value.trim(),
+          subject: document.getElementById('emailSubject').value.trim(),
+          message: document.getElementById('emailMessage').value.trim()
+        };
+      }
+
+      // Handler for WhatsApp
+      function sendViaWhatsApp() {
+        const data = getFormData();
+        if (!data) return;
+
+        const waText = `*New Portfolio Message for Yash Limbasiya*\n\n` +
+          `👤 *Name:* ${data.name}\n` +
+          `📧 *Email:* ${data.email}\n` +
+          `📌 *Subject:* ${data.subject}\n\n` +
+          `💬 *Message:*\n${data.message}`;
+
+        const whatsappUrl = `https://wa.me/917487983606?text=${encodeURIComponent(waText)}`;
+
+        statusMsg.className = "text-xs p-3.5 rounded-xl bg-midnight-surface border border-emerald-500/40 text-emerald-400 block font-mono space-y-1";
+        statusMsg.innerHTML = `
+          <div class="flex items-center gap-2 font-semibold">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            Opening WhatsApp to send message to +91 7487983606...
+          </div>
+          <div class="text-[11px] text-mutedtext">
+            If WhatsApp didn't open automatically, <a href="${whatsappUrl}" target="_blank" class="text-champagne underline hover:text-champagne-accent font-bold">click here to open WhatsApp directly</a>.
+          </div>
+        `;
+
+        setTimeout(() => {
+          window.open(whatsappUrl, '_blank');
+        }, 300);
+      }
+
+      // Handler for Email
+      function sendViaEmail() {
+        const data = getFormData();
+        if (!data) return;
+
+        const emailBody = `Sender Name: ${data.name}\nSender Email: ${data.email}\n\nMessage:\n${data.message}`;
+        const mailtoUrl = `mailto:limbasiyayash36@gamil.com?subject=${encodeURIComponent(data.subject)}&body=${encodeURIComponent(emailBody)}`;
+
+        statusMsg.className = "text-xs p-3.5 rounded-xl bg-midnight-surface border border-champagne text-champagne block font-mono space-y-1";
+        statusMsg.innerHTML = `
+          <div class="flex items-center gap-2 font-semibold">
+            <span class="w-2 h-2 rounded-full bg-champagne animate-pulse"></span>
+            Opening your email client to send to limbasiyayash36@gamil.com...
+          </div>
+          <div class="text-[11px] text-mutedtext">
+            If your email app didn't open automatically, <a href="${mailtoUrl}" class="text-white underline hover:text-champagne font-bold">click here to open email client</a>.
+          </div>
+        `;
+
+        setTimeout(() => {
+          window.location.href = mailtoUrl;
+        }, 300);
+      }
+
+      if (btnWhatsApp) {
+        btnWhatsApp.addEventListener('click', sendViaWhatsApp);
+      }
+
+      if (btnEmail) {
+        btnEmail.addEventListener('click', sendViaEmail);
+      }
+
+      // Default enter submission opens WhatsApp
+      contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        sendViaWhatsApp();
+      });
+    }
+  </script>
+</body>
+</html>
